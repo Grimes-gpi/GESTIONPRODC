@@ -1,0 +1,39 @@
+package com.example.myapplication;
+
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+            Categoria categoria1 = new Categoria("Electrodomesticos");
+            Categoria categoria2 = new Categoria("Ropa");
+
+            Producto producto1 = new Producto("Lavadora", 100, 1, categoria1);
+            Producto producto2 = new Producto("Arrocera", 99.99, 1, categoria1);
+            Producto producto3 = new Producto("Jeans", 50.34, 2, categoria2);
+
+            Inventario inventario = new Inventario();
+            inventario.agregarProducto(producto1);
+            inventario.agregarProducto(producto2);
+            inventario.agregarProducto(producto3);
+
+            System.out.println("Categoria:");
+            System.out.println(categoria1);
+
+            System.out.println("\nProductos:");
+            System.out.println(producto1 + "\n" + producto2 + "\n" + producto3);
+
+            System.out.println("\nInventario:");
+            inventario.listarProductos();
+        }
+    }
+
+
